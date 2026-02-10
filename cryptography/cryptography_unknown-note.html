@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>"Unknown Note" - Challenges-AM</title>
+        <!-- SOLUTION:
+                - Caesar Cipher (shift of 16)
+                - sECu_Je_QL-SbKR  --decoded to->  cOMe_To_AV-ClUB
+
+                - Flag: HACKFAX{cOMe_To_AV-ClUB}
+                -->
+        <style>
+            a, a:visited {
+                text-decoration: none;
+                color: black;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .challenge-name * {
+                display: inline;
+                padding: 1rem;
+            }
+            body {
+                margin: 2rem;
+                font-family: sans-serif;
+                font-size: 1.3rem;
+            }
+            .main {
+                padding-left: 1rem;
+            }
+            .message p {
+                background-color: rgb(203, 203, 203);
+                padding: 0.8rem;
+                display: inline;
+            }
+            .flag-format code {
+                color: lime;
+                background-color: rgb(92, 92, 92);
+                padding: 0.8rem;
+            }
+        </style>
+    </head>
+    
+    <a href="/index.html"><h1>Capture the Flag (CTF) challenges - Ayaan Modak</h1></a>
+    <hr>
+    <body>
+        <div class="challenge-name"><h1>"Unknown Note"</h1><small>Cryptography</small></div>
+
+        <div class="main">
+            <h2>Description</h2>
+            A note was slipped into your locker with a string of random letters and 16:00 written on it. Decipher the message on the note to know its true meaning.
+
+            <div class="message">
+                <h2>Message:</h2> 
+                <p>sECu_Je_QL-SbKR</p>
+            </div>
+
+            <div class="flag-format">
+                <h2>Flag Format:</h2>
+                <code>HACKFAX{deciphered_message}</code>
+            </div>
+        </div>
+    </body>
+</html>
