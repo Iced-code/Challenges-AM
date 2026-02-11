@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>"A Taste of Home" - Challenges-AM</title>
+        <title>"From the Ashes" - Challenges-AM</title>
         <!-- SOLUTION:
-                1. Convert Hex to ASCII:
-                    63 32 56 68 63 48 4A 31 62 6D 56 66 63 33 52 6C 64 77 3D 3D >>> c2VhcHJ1bmVfc3Rldw==
-                2. Decode from Base64 format:
-                    c2VhcHJ1bmVfc3Rldw== >>> seaprune_stew
-
-                - Flag: HACKFAX{seaprune_stew}
+                1. Decipher PIGPEN:
+                    >>> key zhao
+                2. Convert first message from ASCII to HEX:
+                    *:(!9-l5/#.b6!7*) >>> 2A 3A 28 21 39 2D 6C 35 2F 23 2E 62 36 21 37 2A 29
+                3. Perform XOR decryption With the hexadecimal message as the input and "ZHAO" as the key:
+                    "2A 3A 28 21 39 2D 6C 35 2F 23 2E 62 36 21 37 2A 29" ^ ZHAO >>> prince-zuko-lives
+                
+                - Flag: HACKFAX{prince-zuko-lives}
                 -->
         <style>
             a, a:visited {
@@ -22,7 +24,6 @@
                 display: inline;
                 padding: 0.8rem;
             }
-
             .challenge-name .difficulty {
                 padding: 0.1rem 0.4rem;
                 border-radius: 1rem;
@@ -38,7 +39,7 @@
             .hard {
                 background-color: red;
             }
-
+            
             body {
                 margin: 2rem;
                 font-family: sans-serif;
@@ -51,6 +52,13 @@
                 background-color: rgb(203, 203, 203);
                 padding: 0.8rem;
                 display: inline;
+            }
+            .message * {
+                display: block;
+            }
+            .message img {
+                padding: 1rem;
+                background-color: rgb(203, 203, 203);
             }
             .flag-format code {
                 color: white;
@@ -68,15 +76,16 @@
     <a href="../index.html"><h1>Capture the Flag (CTF) challenges - Ayaan Modak</h1></a>
     <hr>
     <body>
-        <div class="challenge-name"><h1>"A Taste of Home"</h1><small>Cryptography</small><p class="difficulty medium">Medium</p></div>
+        <div class="challenge-name"><h1>"From the Ashes"</h1><small>Cryptography</small><p class="difficulty hard">Hard</p></div>
 
         <div class="main">
             <h2>Description</h2>
-            To protect the culture of the Southern Water Tribe, traditional recipes are often recorded in an encrypted form. You have found the following entry, now decipher it to discover a Water Tribe delicacy.
-
+            You intercepted a message from a destroyed Fire Nation warship. The message consists of two parts: one made up of random letters, numbers, and symbols, while the other is a set of seeminly random symbols.
+            Decrypt the parts and determine the complete message. 
             <div class="message">
                 <h2>Message:</h2> 
-                <p>63 32 56 68 63 48 4A 31 62 6D 56 66 63 33 52 6C 64 77 3D 3D</p>
+                <p>*:(!9-l5/#.b6!7*)</p>
+                <img src="../assets/cryptography_from-the-ashes_pigpen.png">
             </div>
 
             <div class="flag-format">
@@ -85,21 +94,27 @@
             </div>
 
             <br>
-            <h2 onclick="toggleDisplay('hint')">Hint</h2>
-            <div id="hint" style="display: none;">
-                <p>Those "=" symbols at the end must mean something more...</p>
+            <h2 onclick="toggleDisplay('hint1')">Hint 1</h2>
+            <div id="hint1" style="display: none;">
+                <p>Sometimes numbers are easier to understand.</p>
+            </div>
+            <h2 onclick="toggleDisplay('hint2')">Hint 2</h2>
+            <div id="hint2" style="display: none;">
+                <p>A & !B OR !A & B</p>
             </div>
 
             <h2 onclick="toggleDisplay('solution');document.getElementById('flag').style.display='none'">Solution</h2>
             <div id="solution" style="display: none;">
                 <ol>
-                    1. Convert Hex to ASCII:
-                    <ul>63 32 56 68 63 48 4A 31 62 6D 56 66 63 33 52 6C 64 77 3D 3D    &#8594    c2VhcHJ1bmVfc3Rldw==</ul><br>
-                    2. Decode from Base64 format:
-                    <ul>c2VhcHJ1bmVfc3Rldw==    &#8594    seaprune_stew</ul>
+                    1. Decipher PIGPEN:
+                    <ul>&#8594    key zhao</ul><br>
+                    2. Convert first message from ASCII to HEX:
+                    <ul>*:(!9-l5/#.b6!7*)    &#8594    2A 3A 28 21 39 2D 6C 35 2F 23 2E 62 36 21 37 2A 29</ul>
+                    3. Perform XOR decryption With the hexadecimal message as the input and "ZHAO" as the key:
+                    <ul>"2A 3A 28 21 39 2D 6C 35 2F 23 2E 62 36 21 37 2A 29" ^ ZHAO    &#8594    prince-zuko-lives</ul>
                 </ol>
                 <h2 onclick="toggleDisplay('flag');">Flag</h2>
-                <h2 id="flag" style="display: none;"><code>HACKFAX{seaprune_stew}</code></h2>
+                <h2 id="flag" style="display: none;"><code>HACKFAX{prince-zuko-lives}</code></h2>
             </div>
         </div>
     </body>
