@@ -18,7 +18,7 @@
             }
             .challenge-name * {
                 display: inline;
-                padding: 1rem;
+                padding: 0.8rem;
             }
             body {
                 margin: 2rem;
@@ -34,8 +34,13 @@
                 display: inline;
             }
             .flag-format code {
-                color: lime;
+                color: white;
                 background-color: rgb(92, 92, 92);
+                padding: 0.8rem;
+            }
+            #flag code {
+                color: lime;
+                background-color: rgb(24, 24, 24);
                 padding: 0.8rem;
             }
         </style>
@@ -59,6 +64,25 @@
                 <h2>Flag Format:</h2>
                 <code>HACKFAX{deciphered_message}</code>
             </div>
+
+            <br>
+            <div>
+                <h2 onclick="toggleDisplay();">Flag</h2>
+                <div id="flag" style="display: none;">
+                    <h2><code>HACKFAX{cOMe_To_AV-ClUB}</code></h2>
+                </div>
+            </div>
         </div>
     </body>
+    <script>
+        function toggleDisplay(){
+            const flag = document.getElementById("flag");
+            if(flag.style.display === "none"){
+                flag.style.display = "inline";
+            }
+            else {
+                flag.style.display = "none";
+            }
+        }
+    </script>
 </html>
