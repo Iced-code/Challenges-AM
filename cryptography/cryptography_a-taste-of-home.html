@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>"A Taste of Home" - Challenges-AM</title>
+        <!-- SOLUTION:
+                1. Convert Hex to ASCII:
+                    63 32 56 68 63 48 4A 31 62 6D 56 66 63 33 52 6C 64 77 3D 3D >>> c2VhcHJ1bmVfc3Rldw==
+                2. Decode from Base64 format:
+                    c2VhcHJ1bmVfc3Rldw== >>> seaprune_stew
+
+                - Flag: HACKFAX{seaprune_stew}
+                -->
+        <style>
+            a, a:visited {
+                text-decoration: none;
+                color: black;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .challenge-name * {
+                display: inline;
+                padding: 0.8rem;
+            }
+            body {
+                margin: 2rem;
+                font-family: sans-serif;
+                font-size: 1.3rem;
+            }
+            .main {
+                padding-left: 1rem;
+            }
+            .message p {
+                background-color: rgb(203, 203, 203);
+                padding: 0.8rem;
+                display: inline;
+            }
+            .flag-format code {
+                color: white;
+                background-color: rgb(92, 92, 92);
+                padding: 0.8rem;
+            }
+            #flag code {
+                color: lime;
+                background-color: rgb(24, 24, 24);
+                padding: 0.8rem;
+            }
+        </style>
+    </head>
+    
+    <a href="../index.html"><h1>Capture the Flag (CTF) challenges - Ayaan Modak</h1></a>
+    <hr>
+    <body>
+        <div class="challenge-name"><h1>"A Taste of Home"</h1><small>Cryptography</small></div>
+
+        <div class="main">
+            <h2>Description</h2>
+            To protect the culture of the Southern Water Tribe, traditional recipes are often recorded in an encrypted form. You have found the following entry, now decipher it to discover a Water Tribe delicacy.
+
+            <div class="message">
+                <h2>Message:</h2> 
+                <p>63 32 56 68 63 48 4A 31 62 6D 56 66 63 33 52 6C 64 77 3D 3D</p>
+            </div>
+
+            <div class="flag-format">
+                <h2>Flag Format:</h2>
+                <code>HACKFAX{deciphered_message}</code>
+            </div>
+
+            <br>
+            <h2 onclick="toggleDisplay('hint')">Hint</h2>
+            <div id="hint" style="display: none;">
+                <p>Those "=" symbols at the end must mean something more...</p>
+            </div>
+
+            <h2 onclick="toggleDisplay('solution');document.getElementById('flag').style.display='none'">Solution</h2>
+            <div id="solution" style="display: none;">
+                <ol>
+                    1. Convert Hex to ASCII:
+                    <ul>63 32 56 68 63 48 4A 31 62 6D 56 66 63 33 52 6C 64 77 3D 3D    &#8594    c2VhcHJ1bmVfc3Rldw==</ul><br>
+                    2. Decode from Base64 format:
+                    <ul>c2VhcHJ1bmVfc3Rldw==    &#8594    seaprune_stew</ul>
+                </ol>
+                <h2 onclick="toggleDisplay('flag');">Flag</h2>
+                <h2 id="flag" style="display: none;"><code>HACKFAX{seaprune_stew}</code></h2>
+            </div>
+        </div>
+    </body>
+    <script>
+        function toggleDisplay(elementID){
+            const element = document.getElementById(elementID);
+            if(element.style.display === "none"){
+                element.style.display = "inline";
+            }
+            else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</html>
