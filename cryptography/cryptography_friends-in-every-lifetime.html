@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>"From the Ashes" - Challenges-AM</title>
+        <title>"Friends in Every Lifetime" - Challenges-AM</title>
         <!-- SOLUTION:
-                1. Decipher PIGPEN:
-                    >>> key zhao
-                2. Convert first message from ASCII to HEX:
-                    *:(!9-l5/#.b6!7*) >>> 2A 3A 28 21 39 2D 6C 35 2F 23 2E 62 36 21 37 2A 29
-                3. Perform XOR decryption With the hexadecimal message as the input and "ZHAO" as the key:
-                    "2A 3A 28 21 39 2D 6C 35 2F 23 2E 62 36 21 37 2A 29" ^ ZHAO >>> prince-zuko-lives
+                1. Reverse Vigenere Cipher. The second phrase was generated based on the intersection of the first phrase and the unknown keyword.
+                   The keyword is the flag.
+                    >>> APPAANDMOMO
+                    
+                - Flag: HACKFAX{APPAANDMOMO}
                 
-                - Flag: HACKFAX{prince-zuko-lives}
+                </ol>
+                <h2 onclick="toggleDisplay('flag');">Flag</h2>
+                <h2 id="flag" style="display: none;"><code>HACKFAX{APPAANDMOMO}
                 -->
         <style>
             a, a:visited {
@@ -53,12 +54,8 @@
                 padding: 0.8rem;
                 display: inline;
             }
-            .message * {
+            .message * p {
                 display: block;
-            }
-            .message img {
-                padding: 1rem;
-                background-color: rgb(203, 203, 203);
             }
             .flag-format code {
                 color: white;
@@ -76,16 +73,15 @@
     <a href="../index.html"><h1>Capture the Flag (CTF) challenges - Ayaan Modak</h1></a>
     <hr>
     <body>
-        <div class="challenge-name"><h1>"From the Ashes"</h1><small>Cryptography</small><p class="difficulty hard">Hard</p></div>
+        <div class="challenge-name"><h1>"Friends in Every Lifetime"</h1><small>Cryptography</small><p class="difficulty easy">Easy</p></div>
 
         <div class="main">
             <h2>Description</h2>
-            You intercepted a message from a destroyed Fire Nation warship. The message consists of two parts: one made up of a string of random characters, while the other is a set of seemingly indecipherable symbols.
-            Decrypt the parts and determine the complete message. 
+            In the archives of the Northern Air Temple, you stumbled upon a scroll with two strings of text. Determine the message that lies within.
             <div class="message">
                 <h2>Message:</h2> 
-                <p>*:(!9-l5/#.b6!7*)</p>
-                <img src="../assets/cryptography_from-the-ashes_pigpen.png">
+                <p>AIRBENDERSBESTFRIENDS</p>
+                <p>AXGBEAGQFEPEHIFRVHZRE</p>
             </div>
 
             <div class="flag-format">
@@ -94,27 +90,15 @@
             </div>
 
             <br>
-            <h2 onclick="toggleDisplay('hint1')">Hint 1</h2>
-            <div id="hint1" style="display: none;">
-                <p>Sometimes numbers are easier to understand.</p>
-            </div>
-            <h2 onclick="toggleDisplay('hint2')">Hint 2</h2>
-            <div id="hint2" style="display: none;">
-                <p>A && !B OR !A && B</p>
-            </div>
-
             <h2 onclick="toggleDisplay('solution');document.getElementById('flag').style.display='none'">Solution</h2>
             <div id="solution" style="display: none;">
                 <ol>
-                    1. Decipher PIGPEN:
-                    <ul>&#8594    key zhao</ul>
-                    2. Convert first message from ASCII to HEX:
-                    <ul>*:(!9-l5/#.b6!7*)    &#8594    2A 3A 28 21 39 2D 6C 35 2F 23 2E 62 36 21 37 2A 29</ul>
-                    3. Perform XOR decryption with the hexadecimal message as the input and "ZHAO" as the key:
-                    <ul>"2A 3A 28 21 39 2D 6C 35 2F 23 2E 62 36 21 37 2A 29" ^ ZHAO    &#8594    prince-zuko-lives</ul>
+                    1. Reverse Vigenere Cipher. The second phrase was generated based on the intersection of the first phrase and the unknown keyword.
+                        The keyword is the flag.
+                    <ul>&#8594    APPAANDMOMO</ul>
                 </ol>
                 <h2 onclick="toggleDisplay('flag');">Flag</h2>
-                <h2 id="flag" style="display: none;"><code>HACKFAX{prince-zuko-lives}</code></h2>
+                <h2 id="flag" style="display: none;"><code>HACKFAX{APPAANDMOMO}</code></h2>
             </div>
         </div>
     </body>
