@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>"Friends in Every Lifetime" - Challenges-AM</title>
+        <title>"Artist's Interpretation" - Challenges-AM</title>
         <!-- SOLUTION:
-                1. Reverse Vigenere Cipher. The second phrase was generated with a Vigenere cipher using the first phrase and an unknown keyword.
-                   The keyword is the flag.
-                    >>> APPAANDMOMO
+                1. Steganography encoded message. Save the image and upload it into a Steganography decoder to get the flag.
+                    >>> The_Promise_of_Balance
                     
-                - Flag: HACKFAX{APPAANDMOMO}
+                - Flag: HACKFAX{The_Promise_of_Balance}
                 
-                </ol>
-                <h2 onclick="toggleDisplay('flag');">Flag</h2>
-                <h2 id="flag" style="display: none;"><code>HACKFAX{APPAANDMOMO}
                 -->
         <style>
             a, a:visited {
@@ -54,8 +50,12 @@
                 padding: 0.8rem;
                 display: inline;
             }
-            .message * p {
+            .message * {
                 display: block;
+            }
+            .message img {
+                padding: 1rem;
+                background-color: rgb(203, 203, 203);
             }
             .flag-format code {
                 color: white;
@@ -73,15 +73,14 @@
     <a href="../index.html"><h1>Capture the Flag (CTF) challenges - Ayaan Modak</h1></a>
     <hr>
     <body>
-        <div class="challenge-name"><h1>"Friends in Every Lifetime"</h1><small>Cryptography</small><p class="difficulty easy">Easy</p></div>
+        <div class="challenge-name"><h1>"Artist's Interpretation"</h1><small>Cryptography</small><p class="difficulty medium">Medium</p></div>
 
         <div class="main">
             <h2>Description</h2>
-            In the archives of the Northern Air Temple, you stumbled upon a scroll with two strings of text. Determine the message that lies within.
+            One of the most famous paintings of Aang Memorial Island. While the artist never explicitly named it, he stated "A picture is worth a thousand words, and perhaps a few more." Determine the title of this work of art.
             <div class="message">
                 <h2>Message:</h2> 
-                <p>AIRBENDERSBESTFRIENDS</p>
-                <p>AXGBEAGQFEPEHIFRVHZRE</p>
+                <img src="../assets/cryptography_artists-interpretation_image.png">
             </div>
 
             <div class="flag-format">
@@ -90,15 +89,18 @@
             </div>
 
             <br>
+            <h2 onclick="toggleDisplay('hint1')">Hint 1</h2>
+            <div id="hint1" style="display: none;">
+                <p>Like Badger Moles, sometimes the truth lies underneath.</p>
+            </div>
             <h2 onclick="toggleDisplay('solution');document.getElementById('flag').style.display='none'">Solution</h2>
             <div id="solution" style="display: none;">
                 <ol>
-                    1. Reverse Vigenere Cipher. The second phrase was generated with a Vigenere cipher using the first phrase and an unknown keyword.
-                        The keyword is the flag.
-                    <ul>&#8594    APPAANDMOMO</ul>
+                    1. Steganography encoded message. Save the image and upload it into a Steganography decoder to get the flag.
+                    <ul>&#8594    The_Promise_of_Balance</ul>
                 </ol>
                 <h2 onclick="toggleDisplay('flag');">Flag</h2>
-                <h2 id="flag" style="display: none;"><code>HACKFAX{APPAANDMOMO}</code></h2>
+                <h2 id="flag" style="display: none;"><code>HACKFAX{The_Promise_of_Balance}</code></h2>
             </div>
         </div>
     </body>
