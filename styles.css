@@ -10,11 +10,17 @@ a:hover {
     padding: 0.8rem;
 }
 
+.category {
+    background-color: lightgray;
+}
+
 .challenge-name .difficulty {
     padding: 0.1rem 0.4rem;
     border-radius: 1rem;
     font-size: 1.5rem;
     display: inline;
+
+    margin-left: 1rem;
 }
 .easy {
     background-color: green;

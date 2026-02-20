@@ -7,3 +7,10 @@ function toggleDisplay(elementID){
         element.style.display = "none";
     }
 }
+
+function checkFlag(answer){
+    const element = document.getElementById("flag");
+    if(element.value === answer){
+        element.style.color = "green";
+    }
+}
