@@ -2,6 +2,9 @@
 <html>
     <head>
         <title>"Artist's Interpretation" - Challenges-AM</title>
+        <link rel="stylesheet" href="../styles.css">
+        <script src="../scripts.js"></script>
+
         <!-- SOLUTION:
                 1. Steganography encoded message. Save the image and upload it into a Steganography decoder to get the flag.
                     >>> The_Promise_of_Balance
@@ -9,65 +12,6 @@
                 - Flag: HACKFAX{The_Promise_of_Balance}
 
                 -->
-        <style>
-            a, a:visited {
-                text-decoration: none;
-                color: black;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-            .challenge-name * {
-                display: inline;
-                padding: 0.8rem;
-            }
-            .challenge-name .difficulty {
-                padding: 0.1rem 0.4rem;
-                border-radius: 1rem;
-                font-size: 1.5rem;
-                display: inline;
-            }
-            .easy {
-                background-color: green;
-            }
-            .medium {
-                background-color: goldenrod;
-            }
-            .hard {
-                background-color: red;
-            }
-            
-            body {
-                margin: 2rem;
-                font-family: sans-serif;
-                font-size: 1.3rem;
-            }
-            .main {
-                padding-left: 1rem;
-            }
-            .message p {
-                background-color: rgb(203, 203, 203);
-                padding: 0.8rem;
-                display: inline;
-            }
-            .message * {
-                display: block;
-            }
-            .message img {
-                padding: 1rem;
-                background-color: rgb(203, 203, 203);
-            }
-            .flag-format code {
-                color: white;
-                background-color: rgb(92, 92, 92);
-                padding: 0.8rem;
-            }
-            #flag code {
-                color: lime;
-                background-color: rgb(24, 24, 24);
-                padding: 0.8rem;
-            }
-        </style>
     </head>
     
     <a href="../index.html"><h1>Capture the Flag (CTF) challenges - Ayaan Modak</h1></a>
@@ -104,15 +48,4 @@
             </div>
         </div>
     </body>
-    <script>
-        function toggleDisplay(elementID){
-            const element = document.getElementById(elementID);
-            if(element.style.display === "none"){
-                element.style.display = "inline";
-            }
-            else {
-                element.style.display = "none";
-            }
-        }
-    </script>
 </html>
